@@ -91,7 +91,8 @@ See functionalities in Features section.
 - The message, `"No thought with this id!"` will appear when a reaction is deleted or a reaction is not associated with a user ID.
 
 9. MongoDB - After creating data on Insomnia, MongoDB also reflects the same data and changes that were made:
-   <img src="/utils/assets/db1.png" width="400px"> <img src="/utils/assets/db2.png" width="400px">
+
+   <img src="/utils/assets/db1.png" width="350px"> <img src="/utils/assets/db2.png" width="350px">
 
 ## Installation 🗳
 
@@ -114,8 +115,6 @@ After installation :
 
 ## Technologies 🔧
 
-- [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
-- [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
 - [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 - [Express.js](https://expressjs.com/)
 - [Node.js](https://nodejs.org/en/)
