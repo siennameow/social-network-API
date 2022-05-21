@@ -1,3 +1,4 @@
+const { json } = require('express/lib/response');
 const { User, Thought } = require('../models');
 
 module.exports = {
@@ -10,6 +11,8 @@ module.exports = {
     //Get single user
     getSingleUser(req,res) {
         User.findOne({ _id: req.params.userId })
+        .populate( 'thoughts' )
+        .populate( 'friends')
         .select('-__v')
         .then((user) => 
         !user
@@ -56,6 +59,31 @@ module.exports = {
         .catch((err) => res.status(500).json(err));    
     },
     //add a friend
-
+    addFriend(req,res) {
+        User.findOneAndUpdate(
+            { _id: req.params.userId },
+            { $push: { friends: req.params.friendId }},
+            { new: true }
+        )
+        .then((friend) => {
+        !friend
+            ? res.status(404).json({ message: 'No User find with this ID!'})
+            : res.json(friend)
+        })
+        .catch((err) => res.status(500).json(err));
+    },
     //delete a friend
+    deleteFriend(req,res) {
+        User.findOneAndUpdate(
+        { _id: req.params.userId },
+        { $pull: { friends: req.params.friendId }},
+        { new: true }
+        )
+        .then((friend) => {
+        !friend
+            ? res.status(404).json({ message: 'No User find with this ID!'})
+            : res,json(friend)
+        })
+        .catch((err) => res.status(500).json(err));
+    }
 };
