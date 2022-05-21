@@ -1,4 +1,5 @@
 const { json } = require("express/lib/response");
+const { trusted } = require("mongoose");
 const { User, Thought } = require("../models");
 
 module.exports = {
@@ -70,6 +71,18 @@ module.exports = {
     .catch((err) => res.status(500).json(err));
     },
   //create reaction
-
+    createReaction(req,res) {
+    Thought.findOneAndUpdate(
+    { _id: req.params.thoughtId },
+    { $addToSet: { reactions: req.body }},
+    { runValidators: true, new: true }
+    )
+    .then((thought) => {
+        !thought
+            ? res.status(404).json({ message: 'No thought frind with ID!'})
+            :res.json(thought)
+    })
+    .catch((err) => res.status(500).json(err));
+    },
   //delete reaction
 };
