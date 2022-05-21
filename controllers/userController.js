@@ -1,7 +1,7 @@
 const { User, Thought } = require("../models");
 
 module.exports = {
-  //Get al users
+  //Get all users
   getUser(req, res) {
     User.find({})
       .then((user) => res.json(user))
@@ -62,10 +62,10 @@ module.exports = {
       { $addToSet: { friends: req.params.friendId } },
       { runValidators: true, new: true }
     )
-      .then((friend) =>
-        !friend
+      .then((user) =>
+        !user
           ? res.status(404).json({ message: "No User find with this ID!" })
-          : res.json(friend)
+          : res.json(user)
       )
       .catch((err) => res.status(500).json(err));
   },
@@ -77,11 +77,10 @@ module.exports = {
       { new: true }
     )
       .then(
-        (friend) =>
-          !friend
+        (user) =>
+          !user
             ? res.status(404).json({ message: "No User find with this ID!" })
-            : res,
-        json(friend)
+            : res.json(user)
       )
       .catch((err) => res.status(500).json(err));
   },
