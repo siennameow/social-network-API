@@ -1,4 +1,4 @@
-# Social Network API 👥
+# Social Network API 💬
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/siennameow/social-network-API/blob/main/LICENSE)
 
