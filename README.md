@@ -24,10 +24,10 @@ https://drive.google.com/file/d/1MQ2WUP7RbTJPUuadVkVzzmjbWWJe8IWU/view
 ## Application Preview ⭐
 
 Demo Gif
-<img src="/utils/assets/demo.gif" width="800px">
+<img src="/public/assets/demo.gif" height="600px">
 
 All GET POST PUT DELETE route for Users, Thoughts, Friends, Reactions.
-<img src="/utils/assets/allroutes.png" height="500px">
+<img src="/public/assets/allroutes.png" height="500px">
 
 See functionalities in Features section.
 
@@ -37,13 +37,15 @@ See functionalities in Features section.
 
 2. When the command to invoke the application is entered, the Mongoose models are synced to the MongoDB database.
 
-<img src="/utils/assets/mongodb.png" width="600px">
+<img src="/public/assets/mongodb.png">
 
 3. When API GET routes for users and thoughts are opened in Insomnia, the data for each of the routes is displayed in formatted JSON.
 
 4. **User**, **Friend**, **Thought**, and **Reaction** routes are created to create the database and test the API on Insomnia.
 
 5. **User Routes** - a user can create a user with a username and valid email address. When created, the user is assigned a unique user ID.
+
+<img src="/public/assets/users.png">
 
 - To create a user, click the `POST` request and enter the user's username and email address. Click Send.
 
@@ -58,6 +60,8 @@ See functionalities in Features section.
 
 6. **Friend Routes** - a user can add a friend and delete a friend.
 
+<img src="/public/assets/friends.png">
+
 - To add a friend, click the `POST` request. On the URL enter the user ID of the user who is adding a friend, then the user ID of the friend the user is adding. \*(Note: Please see the section on Tests for the API routes.)\*
 
 - To see the user's friends, click `Find All Users`. The ID of the friends the user added are listed under `"friends"`. The `"friendCount"` indicates the number of friends the user added.
@@ -67,6 +71,8 @@ See functionalities in Features section.
 - To check if the friend has been removed from the user's friend list, click `Find All Users`.
 
 7. **Thought Routes** - a user can create a thought, get all thoughts or a single thought by ID, update a thought by ID, and delete a thought by ID.
+
+<img src="/public/assets/thoughts.png">
 
 - To create or add a thought, click the `POST` request. Enter the `"thoughtText"`, `"username"`, `"userID"` of the user creating the thought.
 
@@ -82,6 +88,8 @@ See functionalities in Features section.
 
 8. **Reaction Routes** - a user can create a reaction and delete a reaction.
 
+<img src="/public/assets/reactions.png">
+
 - To create a reaction, click the `POST` request. On the URL, enter the ID of the thought the user is reacting or commenting on. Then enter the `"reactionBody"` and `"username"` of the user creating the reaction.
 
 - Click on `GET All Thoughts`to see the reaction, the username of the user who created the reaction, the reaction ID, date and time the reaction is created, and the user's reaction count.
@@ -92,7 +100,7 @@ See functionalities in Features section.
 
 9. MongoDB - After creating data on Insomnia, MongoDB also reflects the same data and changes that were made:
 
-   <img src="/utils/assets/db1.png" width="350px"> <img src="/utils/assets/db2.png" width="350px">
+   <img src="/public/assets/db1.png" width="350px"> <img src="/public/assets/db2.png" width="350px">
 
 ## Installation 🗳
 
